@@ -1,0 +1,107 @@
+:root {
+    --heavy-blue: #0f212e;
+    --dark-blue: #192f41;
+    --blue: #3a5c6b;
+    --light-blue: #A9C0D8;
+    --light-blue-2: #BCCEDA;
+    --light-blue-3: #e6f0f7;
+    --light-gray: #9ba0a5;
+    --white: #FFFFFF;
+    font-family: 'Roboto Slab', serif;
+}
+
+.body-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.7rem;
+}
+
+header, .signup-wrapper {
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h2, legend {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+}
+
+p {
+    color: var(--light-gray);
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    color: var(--blue);
+    margin: 8px 0;
+}
+
+.title-wrapper {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 1.5rem 0px;
+}
+
+.signup-wrapper {
+    padding: 1.5rem 0;
+}
+
+.divisor {
+    height: 10px;
+    border-top: solid 4px var(--dark-blue);
+    border-bottom: solid 2px var(--dark-blue);
+}
+
+form .divisor {
+    height: 0px;
+    border-top: none;
+    border-bottom: solid 2px var(--dark-blue);
+}
+
+fieldset {
+    margin: 1.5rem 0;
+}
+
+.contact-info input, select {
+    box-sizing: inherit;
+    width: 100%;
+    background-color: var(--light-blue-3);
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-info input:last-child {
+    width: 50%;
+}
+
+
+/* After trying a lot of solutions to make only the disabled selected option light gray, i found one that worked
+by using the required atribute on the html select tag. I was using the select:invalid but it was not working,
+after i put the required in the html and rigth below (select:required:invalid) it worked. I got that base code idea at:
+https://www.w3docs.com/snippets/css/how-to-create-a-placeholder-for-an-html5-select-box-by-using-only-html-and-css.html */
+
+select:required:invalid {
+    color: var(--light-gray);
+}
+
+option, select:required:valid {
+    color: var(--blue);
+    font-weight: 500;;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+.newsletter label {
+    display: inline-block;
+}
+
