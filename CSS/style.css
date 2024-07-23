@@ -8,13 +8,14 @@
     --light-blue-2: #BCCEDA;
     --light-blue-3: #e6f0f7;
     --light-gray: #9ba0a5;
+    --light-gray2: #e5e9ec;
     --white: #FFFFFF;
     font-family: 'Roboto Slab', serif;
 }
 
 .body-wrapper {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     margin: 0 0.7rem;
 }
 
@@ -71,7 +72,7 @@ form .divisor {
 
 fieldset {
     margin: 1.5rem 0;
-    padding: 0 8px;
+    padding: 0 16px;
 }
 
 .info-wrapper {
@@ -99,7 +100,7 @@ fieldset {
     padding-left: 1rem;
 }
 
-#zip-code {
+.zip input {
     width: 50%;
 }
 
@@ -129,13 +130,17 @@ option[value=""][disabled] {
 /* Newsletter fieldset style */
 
 .newsletter {
-    border: dashed 1px var(--blue);
+    border: 1px var(--blue);
     border-radius: 5px;
     background-color: var(--light-blue-3);
 }
 
 .newsletter label {
     display: inline-block;
+}
+
+.newsletter input {
+    margin-right: 1rem;
 }
 
 .format-topic {
@@ -147,7 +152,7 @@ textarea {
     margin-top: 8px;
     padding: 8px;
     width: 100%;
-    background-color: var(--light-blue);
+    background-color: var(--light-blue-2);
     border: none;
     border-radius: 5px;
     box-sizing: border-box;
@@ -177,16 +182,52 @@ button:hover {
     margin-bottom: 2rem;
 }
 
+.newsletter legend {
+    background-color: var(--white);
+    border-radius: 4px;
+    padding: 4px;
+}
+
 @media screen and (min-width: 768px) {
 
-    /* contact-info fieldset style */
-    .contact-info {
-        display: flex;
-        flex-wrap: wrap;
+    .signup-wrapper {
+        margin: 2rem 0 1rem 0;
     }
 
-    .contact-info input {
+    /* contact-info fieldset style */
+
+    .body-wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 768px;
+        margin: auto;
+    }
+
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .info-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .info-wrapper input, .info-wrapper select {
         width: 80%;
     }
+
+    .zip {
+        justify-content: flex-start;
+    }
+
+    .zip  input, .zip label {
+        width: 20%;
+    }
+
+    /* Newsletter fieldset style */
 
 }
